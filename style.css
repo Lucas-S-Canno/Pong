@@ -1,0 +1,81 @@
+html{
+    overflow-x: hidden;
+    overflow-Y: hidden;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.ball{
+    width: .8rem;
+    height: .8rem;
+    background-color: white;
+    border-radius: .4rem;
+}
+
+.score{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    height: 50px;
+    width: 100%;
+    border-bottom: 2px solid white;
+}
+
+.score .player1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid white;
+    padding-right: 40px;
+}
+
+.score .player2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.score .player1 h1{
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.score .player1 h2{
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.score .player2 h1{
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.score .player2 h2{
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.player1-bar{
+    width: 10px;
+    height: 150px;
+    background-color: white;
+}
+
+.player2-bar{
+    width: 10px;
+    height: 150px;
+    background-color: white;
+}
+
+.press-to-start{
+    position: absolute;
+    color: white;
+}
