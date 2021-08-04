@@ -42,7 +42,7 @@ function startGame(){
     
     player2Bar.style.left = `${window.innerWidth - 10}px`;
     player2Bar.style.top = `${window.innerHeight/2}px`;
-    
+
     alert('Precione OK para começar!');
 }
 
@@ -123,17 +123,17 @@ function bounceWall(){
     }
 
     if(getIntFromPx(ball.style.left) >= window.innerWidth - ball.clientWidth - player2Bar.clientWidth && getIntFromPx(ball.style.top) >= getIntFromPx(player2Bar.style.top) && getIntFromPx(ball.style.top) <= getIntFromPx(player2Bar.style.top) + player2Bar.clientHeight){
+        ballSpeedHor = ballSpeedHor*(-1);
         // ballSpeedHor = ballSpeedHor+(Math.random());
         // ballSpeedVert = ballSpeedVert+(Math.random());
-        ballSpeedHor = ballSpeedHor*(-1);
         // ballSpeedVert = ballSpeedVert*(-1);
     }
 
 
-    if(getIntFromPx(ball.style.left) >= window.innerWidth || getIntFromPx(ball.style.left) <= 0 ){
-        startGame();
-        randomStart();
-    }
+    // if(getIntFromPx(ball.style.left) > window.innerWidth - ball.clientWidth|| getIntFromPx(ball.style.left) < 0 ){
+    //     startGame();
+    //     randomStart();
+    // }
 
     if(getIntFromPx(ball.style.top) >= window.innerHeight - ball.clientHeight || getIntFromPx(ball.style.top) <= 60+ ball.clientHeight){
         ballSpeedVert = ballSpeedVert*(-1);
@@ -150,15 +150,19 @@ function startScore(){
 }
 
 function verifyPoint(){
-    if(getIntFromPx(ball.style.left) >= window.innerWidth){
+    if(getIntFromPx(ball.style.left) >= window.innerWidth - ball.clientWidth){
         p1Pts++;
         player1Points.textContent = p1Pts.toString();
         alert(`Ponto para o Jogador 1! \n \nPressione ok para continuar!`);
+        startGame();
+        randomStart();
     }
     if(getIntFromPx(ball.style.left) <= 0){
         p2Pts++;
         player2Points.textContent = p2Pts.toString();
         alert(`Ponto para o Jogador 2! \n \nPressione ok para continuar!`);
+        startGame();
+        randomStart();
     }
 }
 
