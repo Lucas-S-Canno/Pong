@@ -2,17 +2,23 @@
 let ball = Array.from(document.getElementsByClassName('ball'))[0];
 let ballSpeedHor = 5;
 let ballSpeedVert = 7;
+let ballSpeedHor2 = 0;
+let ballSpeedVert2 = 0;
 
 //variaveis barra
 let player1Bar =  Array.from(document.getElementsByClassName('player1-bar'))[0];
 let player2Bar =  Array.from(document.getElementsByClassName('player2-bar'))[0];
 let barSpeed = 30;
+let barSpeed2 = 0;
 
 //variaveis placar
 let player1Points = Array.from(document.getElementsByClassName('player1-points'))[0];
 let p1Pts = 0;
 let player2Points = Array.from(document.getElementsByClassName('player2-points'))[0];
 let p2Pts = 0;
+
+let pauseBtn = Array.from(document.getElementsByClassName('pause'))[0];
+let pauseText = Array.from(document.getElementsByClassName('pause-btn'))[0];
 
 //outras variaveis
 let pressToStart = Array.from(document.getElementsByClassName('press-to-start'))[0];
@@ -25,12 +31,17 @@ function setupGame(){
     player1Bar.style.position = 'absolute';
     player2Bar.style.position = 'absolute';
     
+    pauseText.textContent = "PAUSE";
     
+    ballSpeedVert2 = ballSpeedVert;
+    ballSpeedHor2 = ballSpeedHor;
+    barSpeed2 = barSpeed;
     startGame();
     randomStart();
     startScore();
     ballMovement();
     barMovement();
+    pauseGame();
 }
 
 function startGame(){
@@ -43,7 +54,36 @@ function startGame(){
     player2Bar.style.left = `${window.innerWidth - 10}px`;
     player2Bar.style.top = `${window.innerHeight/2}px`;
 
-    alert('Precione OK para começar!');
+    alert('Pressione OK para começar!');
+}
+
+function pauseGame(){
+    window.addEventListener("keydown", (e) => {
+        if(e.keyCode == 32 && pauseText.textContent === "PLAY"){
+            ballSpeedHor = ballSpeedHor2;
+            ballSpeedVert = ballSpeedVert2;
+            barSpeed = barSpeed2;
+            pauseText.textContent = "PAUSE";
+        }
+        else if(e.keyCode == 32 && pauseText.textContent === "PAUSE"){
+            ballSpeedHor = 0;
+            ballSpeedVert = 0;
+            barSpeed = 0;
+            pauseText.textContent = "PLAY";
+        }
+    });
+    pauseBtn.addEventListener('click', ()=>{
+        if(pauseText.textContent == "PAUSE"){
+            ballSpeedHor = 0;
+            ballSpeedVert = 0;
+            pauseText.textContent = "PLAY";
+        }else{
+            ballSpeedHor = ballSpeedHor2;
+            ballSpeedVert = ballSpeedVert2;
+            
+            pauseText.textContent = "PAUSE";
+        }
+    });
 }
 
 //funções barra player
@@ -103,27 +143,36 @@ function ballMovement(){
 
         verifyPoint();
         verifyWinner();
+        
         bounceWall();
     }, 16.7);
 }
 
+
+
 function randomStart(){
     if(Math.random() <= 0.5){
         ballSpeedHor = ballSpeedHor*(-1);
+        ballSpeedVert = ballSpeedVert*(-1);
+        
     }
 }
 
 function bounceWall(){
     
     if(getIntFromPx(ball.style.left) <=0 + ball.clientWidth + player1Bar.clientWidth && getIntFromPx(ball.style.top) >= getIntFromPx(player1Bar.style.top) && getIntFromPx(ball.style.top) <= getIntFromPx(player1Bar.style.top) + player1Bar.clientHeight){
+        ballSpeedHor = ballSpeedHor*(-1);
+        ballSpeedVert2 = ballSpeedVert;
+        ballSpeedHor2 = ballSpeedHor;
         // ballSpeedHor = ballSpeedHor+(Math.random());
         // ballSpeedVert = ballSpeedVert+(Math.random());
-        ballSpeedHor = ballSpeedHor*(-1);
         // ballSpeedVert = ballSpeedVert*(-1);
     }
 
     if(getIntFromPx(ball.style.left) >= window.innerWidth - ball.clientWidth - player2Bar.clientWidth && getIntFromPx(ball.style.top) >= getIntFromPx(player2Bar.style.top) && getIntFromPx(ball.style.top) <= getIntFromPx(player2Bar.style.top) + player2Bar.clientHeight){
         ballSpeedHor = ballSpeedHor*(-1);
+        ballSpeedVert2 = ballSpeedVert;
+        ballSpeedHor2 = ballSpeedHor;
         // ballSpeedHor = ballSpeedHor+(Math.random());
         // ballSpeedVert = ballSpeedVert+(Math.random());
         // ballSpeedVert = ballSpeedVert*(-1);
@@ -137,6 +186,8 @@ function bounceWall(){
 
     if(getIntFromPx(ball.style.top) >= window.innerHeight - ball.clientHeight || getIntFromPx(ball.style.top) <= 60+ ball.clientHeight){
         ballSpeedVert = ballSpeedVert*(-1);
+        ballSpeedVert2 = ballSpeedVert;
+        ballSpeedHor2 = ballSpeedHor;
     }
 }
 
