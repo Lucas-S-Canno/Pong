@@ -142,7 +142,7 @@ function ballMovement(){
         ball.style.top = `${getIntFromPx(ball.style.top) + ballSpeedVert}px`;
 
         verifyPoint();
-        verifyWinner();
+        // verifyWinner();
         
         bounceWall();
     }, 16.7);
@@ -205,6 +205,11 @@ function verifyPoint(){
         p1Pts++;
         player1Points.textContent = p1Pts.toString();
         alert(`Ponto para o Jogador 1! \n \nPressione ok para continuar!`);
+        if(p1Pts == 3){
+            alert("Jogador 1 foi o vencedor da melhor de 3!");
+            randomStart();
+            startScore();
+        }
         startGame();
         randomStart();
     }
@@ -212,25 +217,30 @@ function verifyPoint(){
         p2Pts++;
         player2Points.textContent = p2Pts.toString();
         alert(`Ponto para o Jogador 2! \n \nPressione ok para continuar!`);
+        if(p2Pts == 3){
+            alert("Jogador 2 foi o vencedor da melhor de 3!");
+            randomStart();
+            startScore();
+        }
         startGame();
         randomStart();
     }
 }
 
-function verifyWinner(){
-    if(p1Pts == 3){
-        alert("Jogador 1 foi o vencedor da melhor de 3!");
-        startGame();
-        randomStart();
-        startScore();
-    }
-    if(p2Pts == 3){
-        alert("Jogador 2 foi o vencedor da melhor de 3!");
-        startGame();
-        randomStart();
-        startScore();
-    }
-}
+// function verifyWinner(){
+//     if(p1Pts == 3){
+//         alert("Jogador 1 foi o vencedor da melhor de 3!");
+//         startGame();
+//         randomStart();
+//         startScore();
+//     }
+//     if(p2Pts == 3){
+//         alert("Jogador 2 foi o vencedor da melhor de 3!");
+//         startGame();
+//         randomStart();
+//         startScore();
+//     }
+// }
 
 
 //funções extras
