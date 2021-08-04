@@ -32,7 +32,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 2px solid white;
+    /* border-right: 2px solid white; */
     padding-right: 40px;
 }
 
@@ -78,4 +78,24 @@ body{
 .press-to-start{
     position: absolute;
     color: white;
+}
+
+.pause{
+    color: white;
+    float: right;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pause h3{
+    margin: 0;
+}
+
+.pause-btn{
+    margin: 0;
 }
