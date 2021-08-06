@@ -1,0 +1,245 @@
+html{
+    overflow-x: hidden;
+    overflow-Y: hidden;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.ball{
+    width: .8rem;
+    height: .8rem;
+    background-color: white;
+    border-radius: .4rem;
+}
+
+.score{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    height: 50px;
+    width: 100%;
+    border-bottom: 2px solid white;
+}
+
+.score .player1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border-right: 2px solid white; */
+    padding-right: 40px;
+}
+
+.score .player2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.score .player1 h1{
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.score .player1 h2{
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.score .player2 h1{
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.score .player2 h2{
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.player1-bar{
+    width: 10px;
+    height: 150px;
+    background-color: white;
+}
+
+.player2-bar{
+    width: 10px;
+    height: 150px;
+    background-color: white;
+}
+
+
+.pause{
+    color: white;
+    float: right;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pause h3{
+    margin: 0;
+}
+
+.pause-btn{
+    margin: 0;
+}
+.barColor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colors{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.textBarColor{
+    margin: 0 100px
+}
+
+.barColorYellow{
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.barColorYellow:hover{
+    border: 1px solid lightblue;
+}
+
+.barColorRed{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.barColorRed:hover{
+    border: 1px solid lightblue;
+}
+
+.barColorGreen{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.barColorGreen:hover{
+    border: 1px solid lightblue;
+}
+
+.barColorBlue{
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.barColorBlue:hover{
+    border: 1px solid lightblue;
+}
+
+.barColorWhite{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.barColorWhite:hover{
+    border: 1px solid lightblue;
+}
+
+.ballColor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textBallColor{
+    margin: 0 100px
+}
+
+.ballColorYellow{
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.ballColorYellow:hover{
+    border: 1px solid lightblue;
+}
+
+.ballColorRed{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.ballColorRed:hover{
+    border: 1px solid lightblue;
+}
+
+.ballColorGreen{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.ballColorGreen:hover{
+    border: 1px solid lightblue;
+}
+
+.ballColorBlue{
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.ballColorBlue:hover{
+    border: 1px solid lightblue;
+}
+
+.ballColorWhite{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.ballColorWhite:hover{
+    border: 1px solid lightblue;
+}

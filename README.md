@@ -1,7 +1,6 @@
-# Pong
-Pong com Javascript sem o uso de canvas.
+# Pong-Game
+Jogo de pong feito com javascript sem o uso de canvas.
 
-Para mover o Jogador 1
-utilize as teclas W para mover para cima e S para mover para baixo
-
-para mover o jogador 2 utilize as setas para CIMA para mover para cima e a seta para BAIXO para mover para baixo
+Comando para jogar: 
+W e S para mover o jogador1 
+Setas para Cima e Baixo para mover o jogador 2
